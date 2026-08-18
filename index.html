@@ -17,6 +17,21 @@
     />
     <meta name="description" content="Steel Structure design" />
     <script>
+      if (
+        (window.location.protocol === "http:" ||
+          window.location.protocol === "https:") &&
+        /index\.html$/i.test(window.location.pathname)
+      ) {
+        window.history.replaceState(
+          null,
+          document.title,
+          window.location.pathname.replace(/index\.html$/i, "") +
+            window.location.search +
+            window.location.hash
+        );
+      }
+    </script>
+    <script>
       addEventListener(
         "load",
         function() {
@@ -50,7 +65,7 @@
             <h1>
               <a class="navbar-brand" href="index.html">
                 <!--<i class="fas fa-podcast"></i>-->
-                <img src="images/logo.png" height="50" width="50" />® AHK Infra
+                <img src="images/logo.png" height="50" width="50" alt="AHK Infra" />
               </a>
             </h1>
           </div>
@@ -485,8 +500,7 @@
         </div>
         <div class="copyrightbottom">
           <p>
-            <img src="images/logo.png" height="30" width="30" /> © 2019 AHK
-            Infra. All Rights Reserved.
+            © 2019 AHK Infra. All Rights Reserved.
           </p>
         </div>
         <div class="clearfix"></div>
